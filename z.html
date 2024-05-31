@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .yo {
+            height: 50dvh;
+            width: 100%;
+            background-color: #19d03c;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yo">sdfsdf</div>
+    <div class="yo ho"></div>
+
+</body>
+<script>
+    let a = document.querySelector('.yo')
+    let b = document.querySelector('.ho')
+
+    const intervalid = setInterval(() => {
+       
+        let num= Math.random() //random no.
+        let code= Math.floor(num*0xFFFFFF) //its a specific hexa no. we should multiply
+        let hexanum=code.toString(16) // convert number to hexa decimal string 16 represent hexa base16
+        let randomcolor= '#'+hexanum // color code
+        a.style.backgroundColor = randomcolor
+        a.innerHTML = hexanum 
+        setTimeout(() => {
+            b.style.backgroundColor = randomcolor
+        b.innerHTML = hexanum 
+            
+        },1000);
+
+    }, 1000);
+
+
+
+</script>
+
+</html>
